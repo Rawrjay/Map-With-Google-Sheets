@@ -125,10 +125,11 @@ $(window).on('load', function() {
           point['Icon Color']
         );
 
-      if (point.Latitude !== '' && point.Longitude !== '') {
+            if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup("<b>" + point['Name'] + '</b><br>' +
-          point['Contact'] + ':' + '<br>' +
+          point['Contact'] + ':' + point['Mobile'] + '<br>' +
+          'Office' + ':' + point['Office'] +
           point['Description']);
 
         if (layers !== undefined && layers.length !== 1) {
