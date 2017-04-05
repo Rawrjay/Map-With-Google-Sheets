@@ -128,8 +128,8 @@ $(window).on('load', function() {
        if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup("<b>" + point['Name'] + '</b><br>' +
-          (point['Contact'] + '<br>') : '') +
-            (point['Email'] + '<br>') : '') point['Mobile'] + point['Office'] +
+          (point['Contact'] + '<br>') : '' +
+            (point['Email'] + '<br>') : '' point['Mobile'] + point['Office'] +
           point['Description']);
 
         if (layers !== undefined && layers.length !== 1) {
@@ -874,13 +874,13 @@ $(window).on('load', function() {
    var mapData;
 
    $.ajax({
-       url:'csv/Options.csv',
-       type:'HEAD',
-       error: function() {
+      url:'csv/Options.csv',
+      type:'HEAD',
+      error: function() {
          // Options.csv does not exist, so use Tabletop to fetch data from
          // the Google sheet
          mapData = Tabletop.init({
-           key: 'https://docs.google.com/spreadsheets/d/15K2lVO7O4x3ekCLHqovpx2fOQaVZ0ExZgGQs2JulvP0/edit#gid=0',
+           key: 'https://docs.google.com/spreadsheets/d/15K2lVO7O4x3ekCLHqovpx2fOQaVZ0ExZgGQs2JulvP0/edit#gid=164271551',
            callback: function(data, mapData) { onMapDataLoad(); }
          });
        },
