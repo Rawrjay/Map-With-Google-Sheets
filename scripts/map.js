@@ -125,11 +125,12 @@ $(window).on('load', function() {
           point['Icon Color']
         );
 
-                  if (point.Latitude !== '' && point.Longitude !== '') {
+      if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup("<b>" + point['Name'] + '</b><br>' +
-          point['Contact'] + '&nbsp;' + point['Mobile'] + '<br>' +
+          point['Contact'] + ':' + '&nbsp;' + point['Mobile'] + '<br>' +
           'Office' + ':' + '&nbsp;' + point['Office'] + '<br>' +
+          point['Email'] +
           point['Description']);
 
         if (layers !== undefined && layers.length !== 1) {
@@ -138,6 +139,7 @@ $(window).on('load', function() {
 
         markerArray.push(marker);
       }
+    
     }
 
     var group = L.featureGroup(markerArray);
